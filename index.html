@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlyKos</title>
+    <link href="./FE/src/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>OnlyKost</h1>
+        <nav class="nav">
+            <div class="nav-box">
+                <a href="#home">Beranda</a>
+            </div>
+            <div class="nav-box">
+                <a href="#Kota">Kota Unggulan</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="image-overlay">
+            <img src="./FE/img/kosan.jpg" alt="Welcome to OnlyKost">
+            <div class="text-overlay">
+                <h2>Welcome to OnlyKos</h2>
+                <p>Hanya Sebuah Website Kos Yang Membantu Anda Mencari Kos Idaman</p>
+                <!-- Add more content as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="Kota">
+        <h1 style="text-align: center;">Kota Unggulan</h1>
+        <div class="carousel-container">
+            <div class="team-carousel">
+                <i class="fa-solid fa-arrow-left arrow-left"></i>
+                <div class="team-item rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100" src="./FE/img/Bandung.jpg" onclick="goToKota()" alt="">
+                        <h4 class="text-uppercase">Bandung</h4>
+                    </div>
+                </div>
+                <div class="team-item rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100" src="./FE/img/Monas.png" onclick="goToKota()" alt="">
+                        <h4 class="text-uppercase">Jakarta</h4>
+                    </div>
+                </div>
+                <div class="team-item rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100" src="./FE/img/Semarang.png" onclick="goToKota()" alt="">
+                        <h4 class="text-uppercase">Semarang</h4>
+                    </div>
+                </div>
+                <div class="team-item rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100" src="./FE/img/Yogya.png" onclick="goToKota()" alt="">
+                        <h4 class="text-uppercase">Yogyakarya</h4>
+                    </div>
+                </div>
+                <div class="team-item rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100" src="./FE/img/Surabaya.png" onclick="goToKota()" alt="">
+                        <h4 class="text-uppercase">Surabaya</h4>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-right arrow-right"></i>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p>&copy; 2023 OnlyKos</p>
+        <div>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+        <div>
+            <p>Address: Palangka Raya, Kalimantan Tengah</p>
+            <p>Phone: +6285381029321</p>
+            <p>Email: qwerty@gmail.com.com</p>
+        </div>
+    </footer>
+
+    <script src="./FE/src/js/script.js"></script>
+</body>
+
+</html>

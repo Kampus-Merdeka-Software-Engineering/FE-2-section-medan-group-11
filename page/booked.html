@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pemesanan Kamar</title>
+    <link rel="stylesheet" href="css/booked.css">
+</head>
+<body>
+    <header>
+        <h1>Formulir Pemesanan Kamar</h1>
+    </header>
+    <section class="booking-form">
+        <h2>Informasi Pemesanan</h2>
+        <form action="/submit_booking" method="post">
+            <div class="form-group">
+                <label for="nama">Nama Lengkap:</label>
+                <input type="text" id="nama" name="nama" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telp">Nomor Telepon:</label>
+                <input type="tel" id="telp" name="telp" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tanggal_checkin">Tanggal Pemesanan:</label>
+                <input type="date" id="tanggal_checkin" name="tanggal_checkin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time">Rencana Pemesanan:</label>
+                <select id="time" name="time" required>
+                    <option value="" disabled selected>Pilih Rencana Pemesanan</option>
+                    <option value="3Bulan">3 Bulan</option>
+                    <option value="6Bulan">6 Bulan</option>
+                    <option value="12Bulan">12 Bulan</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="jumlah_orang">Jumlah Orang:</label>
+                <input type="number" id="jumlah_orang" name="jumlah_orang" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tipe_kamar">Tipe Kamar:</label>
+                <select id="tipe_kamar" name="tipe_kamar" required>
+                    <option value="" disabled selected>Pilih Tipe Kamar</option>
+                    <option value="kamar_standar">A</option>
+                    <option value="kamar_deluxe">B</option>
+                    <option value="suite">C</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Pesan">
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2023 OnlyKos</p>
+        <div>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+        <div>
+            <p>Address: Palangka Raya, Kalimantan Tengah</p>
+            <p>Phone: +6285381029321</p>
+            <p>Email: qwerty@gmail.com.com</p>
+        </div>
+    </footer>
+</body>
+</html>
