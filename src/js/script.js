@@ -1,5 +1,5 @@
 function goToKota() {
-    window.location.href = "./FE/page/kota.html";
+    window.location.href = "./page/kota.html";
     return false;
 }
 
@@ -9,7 +9,7 @@ function goToKos() {
 }
 
 function goToHome() {
-    window.location.href = "index.html";
+    window.location.href = "/FE/index.html";
     return false;
 }
 
