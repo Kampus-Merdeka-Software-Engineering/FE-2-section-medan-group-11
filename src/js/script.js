@@ -9,12 +9,12 @@ function goToKos() {
 }
 
 function goToHome() {
-    window.location.href = "/FE/index.html";
+    window.location.href = "../index.html";
     return false;
 }
 
 function goToKosPage() {
-    window.location.href = "kos.html";
+    window.location.href = "./kos.html";
     return false;
 }
 
@@ -24,7 +24,7 @@ function goToKosInfo() {
 }
 
 document.getElementById('pesanButton').addEventListener('click', function () {
-    window.location.href = 'booked.html'; // Ganti 'menu_pemesanan.html' dengan halaman yang sesuai
+    window.location.href = 'booked.html'; 
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (targetSection) {
                 const targetOffset = targetSection.offsetTop - document.querySelector('header').offsetHeight;
                 const initialPosition = window.scrollY;
-                const duration = 800; // Waktu animasi dalam milidetik
+                const duration = 800; 
                 let startTime;
 
                 function scrollAnimation(currentTime) {
@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
 
-                // Fungsi bantu untuk interpolasi linier
                 function easeInOutCubic(t, b, c, d) {
                     t /= d / 2;
                     if (t < 1) return c / 2 * t * t * t + b;
@@ -65,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Your custom carousel logic
     const teamCarousel = document.querySelector(".team-carousel");
     const arrowLeft = document.querySelector(".fa-arrow-left");
     const arrowRight = document.querySelector(".fa-arrow-right");
