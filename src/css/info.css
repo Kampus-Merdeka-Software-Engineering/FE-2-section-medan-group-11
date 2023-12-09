@@ -48,13 +48,17 @@ section {
     max-width: 100%;
     margin: 10px auto;
     padding: 10px;
-    background-color: #fff;
+    background-color: rgb(2, 2, 53);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     color: #ffffff;
+}
+
+h2{
+    color: #fff;
 }
 
 .facilities {

@@ -18,6 +18,11 @@ function goToKosPage() {
     return false;
 }
 
+function goToAbout() {
+    window.location.href = "./page/about.html";
+    return false;
+}
+
 function goToKosInfo() {
     window.location.href = "information.html";
     return false;
@@ -143,3 +148,56 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+function submitBooking() {
+    const namaInput = document.getElementById("nama").value;
+    const emailInput = document.getElementById("email").value;
+    const teleponInput = document.getElementById("telp");
+    const tanggalcheckInput = document.getElementById("tanggal_checkin");
+    const timeInput = document.getElementById("time");
+    const jumlahorangInput = document.getElementById("jumlah_orang");
+    const tipekamarInput = document.getElementById("tipe_kamar");
+    const inputInput = document.getElementById("input");
+  
+    inputInput.disabled = true;
+  
+    const formBooking = {
+      name: namaInput,
+      email:emailInput,
+      telp:teleponInput,
+      tanggal_checkin:tanggalcheckInput,
+      time:timeInput,
+      jumlah_orang:jumlahorangInput,
+      tipe_kamar: tipekamarInput,
+    };
+  
+    fetch("/qna/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formTanya),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+
+        const formPertanyaan = document.getElementById("form-pertanyaan");
+        formPertanyaan.style.display = "none";
+        alert("Pertanyaan telah dikirim!");
+  
+        window.location.reload();
+  
+        submitButton.disabled = false;
+      })
+      .catch((error) => {
+        console.error("Terjadi kesalahan:", error);
+        alert("Terjadi kesalahan saat mengirim pertanyaan.");
+  
+        // Aktifkan kembali tombol setelah terjadi kesalahan
+        submitButton.disabled = false;
+      });
+    
+    return false; // Mencegah perilaku default tombol "Kirim Pertanyaan"
+  }
+  const tanyaButton = document.getElementById("button-submit");
+  tanyaButton.addEventListener("click", submitPertanyaan);

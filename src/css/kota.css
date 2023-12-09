@@ -2,7 +2,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('/FE/img/Bandung.jpg');
+    background-image: url('/img/Bandung.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; 
@@ -17,11 +17,18 @@ body {
     color: #fff;
 }
 
+header img {
+    width: 120px; 
+    height: auto; 
+    background-color: #fff;
+}
+
 nav {
     background-color: #0f007d;
     color: #fff;
     text-align: right;
     padding: 1em 0;
+    border-radius: 10px;
 }
 
 nav a {
@@ -33,8 +40,9 @@ nav a {
 }
 
 nav a:hover {
-    color: #ffcc00;
+    color: #ff0000;
 }
+
 
 #rooms {
     display: flex;

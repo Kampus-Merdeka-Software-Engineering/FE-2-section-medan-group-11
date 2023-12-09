@@ -11,7 +11,7 @@ header {
     align-items: center;
     padding: 20px;
     background-color: rgb(255, 255, 255);
-    color: #333; /* Ganti warna teks ke warna kontras */
+    color: #fc0000; 
 }
 
 .header-container {
@@ -27,6 +27,11 @@ h1 {
     margin: 0;
 }
 
+img {
+    width: 120px;
+    background-color: #fff;
+}
+
 nav {
     display: flex;
 }
@@ -34,13 +39,14 @@ nav {
 nav a {
     margin-left: 20px;
     text-decoration: none;
-    color: #ffffff; /* Ganti warna teks default */
-    transition: color 0.3s, transform 0.3s; /* Tambahkan transisi warna dan transformasi */
+    color: #ffffff;
+    transition: color 0.3s, transform 0.3s, transform-origin 0.3s; /* Added transform-origin for smoother effect */
 }
 
 nav a:hover {
-    color: #fc0000 !important; /* Gunakan !important untuk memastikan prioritas warna hover */
+    color: #fc0000 !important;
     transform: scale(1.1);
+    transform-origin: bottom;
 }
 
 

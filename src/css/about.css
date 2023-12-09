@@ -1,0 +1,121 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: rgb(2, 2, 53);
+    color: #fff;
+}
+
+header img {
+    width: 120px; 
+    height: auto; 
+    background-color: #fff;
+}
+
+nav {
+    background-color: #0f007d;
+    color: #fff;
+    text-align: right;
+    padding: 1em 0;
+    border-radius: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1em;
+    margin: 0 1em;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ff0000;
+}
+
+section {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.team-member {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.member-card {
+    position: relative;
+    width: 200px;
+    height: 260px;
+    margin: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.member-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    color: #fff;
+}
+
+.member-info h3,
+.member-info p {
+    margin: 0;
+}
+
+.member-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.footer a:last-child {
+    margin-right: 0;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer div {
+    margin-top: 10px;
+}
+
+.footer div p {
+    margin: 0;
+}
+
+.footer div p:last-child {
+    margin-bottom: 10px;
+}
