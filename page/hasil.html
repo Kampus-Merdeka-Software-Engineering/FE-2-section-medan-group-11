@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Bookings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Data Bookings</h2>
+
+  <table id="bookingTable">
+    <tr>
+      <th>ID</th>
+      <th>Nama</th>
+      <th>Email</th>
+      <th>Telp</th>
+      <th>Tanggal Pesan</th>
+      <th>Rekan Pesan</th>
+      <th>Jumlah</th>
+      <th>Tipe</th>
+    </tr>
+  </table>
+
+  <script>
+    // Fetch data dari server
+    fetch('http://localhost:3500/bookings') 
+      .then(response => response.json())
+      .then(data => {
+        const bookingTable = document.getElementById('bookingTable');
+
+        data.forEach(bookings => {
+          const row = bookingTable.insertRow(-1); 
+
+          const idCell = row.insertCell(0);
+          idCell.textContent = bookings.id;
+
+          const nameCell = row.insertCell(1);
+          nameCell.textContent = bookings.name;
+
+          const emailCell = row.insertCell(2);
+          emailCell.textContent = bookings.email;
+
+          const telpCell = row.insertCell(3);
+          telpCell.textContent = bookings.telp;
+
+          const tgl_pesanCell = row.insertCell(4);
+          const bookingDate = moment(bookings.tgl_pesan); 
+          tgl_pesanCell.textContent = bookingDate.format('YYYY-MM-DD'); 
+
+          const rcn_pesanCell = row.insertCell(5);
+          rcn_pesanCell.textContent = bookings.rcn_pesan;
+
+          const quantityCell = row.insertCell(6);
+          jumlahCell.textContent = bookings.jumlah
+
+          const tipeCell = row.insertCell(7);
+          tipeCell.textContent = bookings.tipe;
+        });
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  </script>
+</body>
+</html>
