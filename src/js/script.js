@@ -33,9 +33,8 @@ function goToHasil() {
     return false;
 }
 
-document.getElementById('pesanForm').addEventListener('submit', function (event) {
-    event.preventDefault(); 
-    window.location.href = './page/hasil.html';
+document.getElementById('pesanButton').addEventListener('click', function () {
+    window.location.href = 'booked.html'; 
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -186,6 +185,7 @@ async function submitBooking() {
     const tipeInput = document.getElementById("tipe_kamar").value;
     // const inputInput = document.getElementById("input").value;
     await inputBooking(namaInput, emailInput, teleponInput, tgl_pesanInput, rcn_pesanInput, jumlahInput,tipeInput);
+    window.location.href="./hasil.html"
     // inputInput.disabled = true;
   
     // const formBooking = {
