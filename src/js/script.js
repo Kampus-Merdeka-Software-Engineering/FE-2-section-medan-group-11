@@ -175,53 +175,15 @@ async function inputBooking(nama,email,telp, tgl_pesan, rcn_pesan, jumlah, tipe)
     alert("Data Anda Sudah Kami Terima");
 }
 
-async function submitBooking() {
+function submitBooking() {
     const namaInput = document.getElementById("nama").value;
     const emailInput = document.getElementById("email").value;
     const teleponInput = document.getElementById("telp").value;
     const tgl_pesanInput = document.getElementById("tanggal_checkin").value;
     const rcn_pesanInput = document.getElementById("time").value;
     const jumlahInput = document.getElementById("jumlah_orang").value;
-    const tipeInput = document.getElementById("tipe_kamar").value;
-    // const inputInput = document.getElementById("input").value;
-    await inputBooking(namaInput, emailInput, teleponInput, tgl_pesanInput, rcn_pesanInput, jumlahInput,tipeInput);
-    window.location.href="./hasil.html"
-    // inputInput.disabled = true;
-  
-    // const formBooking = {
-    //   nama:namaInput,
-    //   email:emailInput,
-    //   telp:teleponInput,
-    //   tgl_pesan:tgl_pesanInput,
-    //   rcn_pesan:rcn_pesanInput,
-    //   jumlah:jumlahInput,
-    //   tipe:tipeInput
-    // };
-  
-    // fetch("http://localhost:3500/booking", {
-    //   method: "POST", body : JSON.stringify(formBooking),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(formBooking),
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(req.body)
-    //     alert("Data telah dikirim!");
-  
-    //     window.location.reload();
-  
-    //     inputInput.disabled = false;
-    //   })
-    //   .catch((error) => {
-    //     console.error("Terjadi kesalahan:", error);
-    //     alert("Terjadi kesalahan saat mengirim Data.");
-  
-    //     inputInput.disabled = false;
-    //   });
-    
-    // return false; 
+    const tipeInput = document.getElementById("tipe_kamar").v
+    inputBooking(namaInput, emailInput, teleponInput, tgl_pesanInput, rcn_pesanInput, jumlahInput,tipeInput);
   }
   const inputButton = document.getElementById("input");
   inputButton.addEventListener("click", submitBooking);
