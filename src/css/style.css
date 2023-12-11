@@ -418,7 +418,8 @@ p {
         display: block;
     }
 
-    .team-item {
+    #Kota .team-item {
         flex: 0 0 100%;
     }
+    
 }
