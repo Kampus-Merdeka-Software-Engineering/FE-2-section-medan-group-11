@@ -28,8 +28,14 @@ function goToKosInfo() {
     return false;
 }
 
-document.getElementById('pesanButton').addEventListener('click', function () {
-    window.location.href = 'booked.html'; 
+function goToHasil() {
+    window.location.href = "/page/hasil.html";
+    return false;
+}
+
+document.getElementById('pesanForm').addEventListener('submit', function (event) {
+    event.preventDefault(); 
+    window.location.href = './page/hasil.html';
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -149,56 +155,73 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function submitBooking() {
+async function inputBooking(nama,email,telp, tgl_pesan, rcn_pesan, jumlah, tipe){
+    let data = {
+        nama : nama,
+        email : email,
+        telp : telp,
+        tgl_pesan : tgl_pesan,
+        rcn_pesan : rcn_pesan,
+        jumlah : jumlah,
+        tipe : tipe
+    }
+
+    let response = await fetch("http://localhost:3500/booking", {
+        method : "POST",
+        body : JSON.stringify(data),
+        headers : {'Content-type': 'application/json; charset=UTF-8',}
+    })
+    let result = await response.json()
+    console.log(result);
+    alert("Data Anda Sudah Kami Terima");
+}
+
+async function submitBooking() {
     const namaInput = document.getElementById("nama").value;
     const emailInput = document.getElementById("email").value;
-    const teleponInput = document.getElementById("telp");
-    const tgl_pesanInput = document.getElementById("tanggal_checkin");
-    const rcn_pesanInput = document.getElementById("time");
-    const jumlahInput = document.getElementById("jumlah_orang");
-    const tipeInput = document.getElementById("tipe_kamar");
-    const inputInput = document.getElementById("input");
-
-    inputInput.disabled = true;
+    const teleponInput = document.getElementById("telp").value;
+    const tgl_pesanInput = document.getElementById("tanggal_checkin").value;
+    const rcn_pesanInput = document.getElementById("time").value;
+    const jumlahInput = document.getElementById("jumlah_orang").value;
+    const tipeInput = document.getElementById("tipe_kamar").value;
+    // const inputInput = document.getElementById("input").value;
+    await inputBooking(namaInput, emailInput, teleponInput, tgl_pesanInput, rcn_pesanInput, jumlahInput,tipeInput);
+    // inputInput.disabled = true;
   
-    const formBooking = {
-      nama:namaInput,
-      email:emailInput,
-      telp:teleponInput,
-      tgl_pesan:tgl_pesanInput,
-      rcn_pesan:rcn_pesanInput,
-      jumlah:jumlahInput,
-      tipe:tipeInput
-    };
+    // const formBooking = {
+    //   nama:namaInput,
+    //   email:emailInput,
+    //   telp:teleponInput,
+    //   tgl_pesan:tgl_pesanInput,
+    //   rcn_pesan:rcn_pesanInput,
+    //   jumlah:jumlahInput,
+    //   tipe:tipeInput
+    // };
   
-    fetch("/booking", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formBooking),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(req.body)
-        alert("Data telah dikirim!");
+    // fetch("http://localhost:3500/booking", {
+    //   method: "POST", body : JSON.stringify(formBooking),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(formBooking),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     console.log(req.body)
+    //     alert("Data telah dikirim!");
   
-        window.location.reload();
+    //     window.location.reload();
   
-        inputInput.disabled = false;
-      })
-      .catch((error) => {
-        console.error("Terjadi kesalahan:", error);
-        alert("Terjadi kesalahan saat mengirim Data.");
+    //     inputInput.disabled = false;
+    //   })
+    //   .catch((error) => {
+    //     console.error("Terjadi kesalahan:", error);
+    //     alert("Terjadi kesalahan saat mengirim Data.");
   
-        // Aktifkan kembali tombol setelah terjadi kesalahan
-        inputInput.disabled = false;
-      });
+    //     inputInput.disabled = false;
+    //   });
     
-    return false; // Mencegah perilaku default tombol "Kirim Pertanyaan"
+    // return false; 
   }
   const inputButton = document.getElementById("input");
   inputButton.addEventListener("click", submitBooking);
-
-
-  

@@ -12,56 +12,98 @@
 
   <table id="bookingTable">
     <tr>
-      <th>ID</th>
       <th>Nama</th>
       <th>Email</th>
       <th>Telp</th>
       <th>Tanggal Pesan</th>
-      <th>Rekan Pesan</th>
+      <th>Rencana Pesan</th>
       <th>Jumlah</th>
       <th>Tipe</th>
+      <th>Update</th>
+      <th>Delete</th>
     </tr>
   </table>
 
+  <div>
+    <button id="updateButton">Update Selected</button>
+    <button id="deleteButton">Delete Selected</button>
+  </div>
+
   <script>
-    // Fetch data dari server
+
     fetch('http://localhost:3500/bookings') 
       .then(response => response.json())
       .then(data => {
         const bookingTable = document.getElementById('bookingTable');
 
-        data.forEach(bookings => {
-          const row = bookingTable.insertRow(-1); 
+        const latestBooking = data[data.length - 1];
 
-          const idCell = row.insertCell(0);
-          idCell.textContent = bookings.id;
+        const row = bookingTable.insertRow(-1); 
 
-          const nameCell = row.insertCell(1);
-          nameCell.textContent = bookings.name;
+        const cellData = [latestBooking.nama, latestBooking.email, latestBooking.telp, latestBooking.tanggal_pesan, latestBooking.rekan_pesan, latestBooking.jumlah, latestBooking.tipe];
 
-          const emailCell = row.insertCell(2);
-          emailCell.textContent = bookings.email;
-
-          const telpCell = row.insertCell(3);
-          telpCell.textContent = bookings.telp;
-
-          const tgl_pesanCell = row.insertCell(4);
-          const bookingDate = moment(bookings.tgl_pesan); 
-          tgl_pesanCell.textContent = bookingDate.format('YYYY-MM-DD'); 
-
-          const rcn_pesanCell = row.insertCell(5);
-          rcn_pesanCell.textContent = bookings.rcn_pesan;
-
-          const quantityCell = row.insertCell(6);
-          jumlahCell.textContent = bookings.jumlah
-
-          const tipeCell = row.insertCell(7);
-          tipeCell.textContent = bookings.tipe;
+        cellData.forEach((data, index) => {
+          const cell = row.insertCell(index);
+          cell.textContent = data;
         });
+
+        const updateCell = row.insertCell(7);
+        const updateButton = document.createElement('button');
+        updateButton.textContent = 'Update';
+        updateButton.addEventListener('click', () => {
+          const newName = prompt('Masukkan nama baru:', latestBooking.nama);
+          if (newName !== null) {
+            fetch(`http://localhost:3500/bookings/${latestBooking.id}`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ nama: newName }),
+            })
+            .then(response => response.json())
+            .then(updatedBooking => {
+              console.log('Booking berhasil diperbarui:', updatedBooking);
+              location.reload();
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+          }
+        });
+        updateCell.appendChild(updateButton);
+
+        const deleteCell = row.insertCell(8);
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', () => {
+          const confirmDelete = confirm('Anda yakin ingin menghapus data booking ini?');
+          if (confirmDelete) {
+            fetch(`http://localhost:3500/bookings/${latestBooking.id}`, {
+              method: 'DELETE',
+            })
+            .then(response => response.json())
+            .then(deletedBooking => {
+              console.log('Booking berhasil dihapus:', deletedBooking);
+              location.reload();
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+          }
+        });
+        deleteCell.appendChild(deleteButton);
       })
       .catch(error => {
         console.error('Error:', error);
       });
+
+    document.getElementById('updateButton').addEventListener('click', () => {
+      alert('Anda klik tombol "Update Selected".'); 
+    });
+
+    document.getElementById('deleteButton').addEventListener('click', () => {
+      alert('Anda klik tombol "Delete Selected".'); 
+    });
   </script>
 </body>
 </html>

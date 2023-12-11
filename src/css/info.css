@@ -23,6 +23,10 @@ header {
     margin: 0 auto;
 }
 
+p{
+    color: #fff;
+}
+
 h1 {
     margin: 0;
     color: #fff;

@@ -5,26 +5,24 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: rgb(0, 0, 0);
-    color: white;
-}
-
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 1em;
+    background-color: rgb(2, 2, 53);
+    color: #fff;
+}
+
+header img {
+    width: 120px; 
+    height: auto; 
+    background-color: #fff;
 }
 
 h1 {
     margin: 0;
+    font-size: 24px; /* Adjusted font size */
 }
 
 nav {
@@ -32,7 +30,7 @@ nav {
 }
 
 nav a {
-    margin-left: 20px;
+    margin-left: 15px; /* Adjusted margin */
     text-decoration: none;
     color: white;
     transition: color 0.3s, transform 0.3s;
@@ -42,6 +40,11 @@ nav a:hover {
     color: #fc0000 !important;
     transform: scale(1.1);
 }
+
+.logo {
+    max-width: 100px; /* Adjusted maximum width for the logo */
+}
+
 
 section {
     padding: 2em;
