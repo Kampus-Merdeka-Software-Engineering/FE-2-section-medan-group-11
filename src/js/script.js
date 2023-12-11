@@ -165,7 +165,7 @@ async function inputBooking(nama,email,telp, tgl_pesan, rcn_pesan, jumlah, tipe)
         tipe : tipe
     }
 
-    let response = await fetch("http://localhost:3500/booking", {
+    let response = await fetch("https://kind-jade-wasp-wig.cyclic.app/booking", {
         method : "POST",
         body : JSON.stringify(data),
         headers : {'Content-type': 'application/json; charset=UTF-8',}
