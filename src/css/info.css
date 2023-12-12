@@ -5,22 +5,19 @@ body {
     background-color: #f4f4f4;
 }
 
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: rgb(2, 2, 53);
-    color: #ffffff; /* Ganti warna teks ke warna kontras */
-}
-
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 1em;
+    background-color: rgb(2, 2, 53);
+    color: #fff;
+}
+
+header img {
+    width: 120px; 
+    height: auto; 
+    background-color: #fff;
 }
 
 p{

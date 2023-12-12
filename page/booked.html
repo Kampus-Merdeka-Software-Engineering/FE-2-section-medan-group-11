@@ -11,7 +11,7 @@
     </header>
     <section class="booking-form">
         <h2>Informasi Pemesanan</h2>
-        <form>
+        <div>
             <div class="form-group">
                 <label for="nama">Nama Lengkap:</label>
                 <input type="text" id="nama" name="nama" required>
@@ -56,9 +56,8 @@
                     <option value="suite">C</option>
                 </select>
             </div>
-
-            <input type="submit" id="input" value="Pesan" onclick="submitBooking()">
-        </form>
+            <button onclick="inputBooking()">Submit</button>
+        </div>
     </section>
 
     <footer class="footer">
