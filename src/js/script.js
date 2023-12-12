@@ -174,27 +174,18 @@ async function inputBooking(){
 
     let response = await fetch("https://kind-jade-wasp-wig.cyclic.app/booking", {
         method : "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
         body : JSON.stringify(data),
     })
     let result = await response.json()
 
     if (result) {
-        console.log(result);
         alert("Data Anda Sudah Kami Terima");
     }
     } catch (error){
         alert("Data Anda Tidak Kami Terima");
     }
 }
-// function submitBooking() {
-//     const namaInput = document.getElementById("nama").value;
-//     const emailInput = document.getElementById("email").value;
-//     const teleponInput = document.getElementById("telp").value;
-//     const tgl_pesanInput = document.getElementById("tanggal_checkin").value;
-//     const rcn_pesanInput = document.getElementById("time").value;
-//     const jumlahInput = document.getElementById("jumlah_orang").value;
-//     const tipeInput = document.getElementById("tipe_kamar").value;
-//     inputBooking(namaInput, emailInput, teleponInput, tgl_pesanInput, rcn_pesanInput, jumlahInput,tipeInput);
-//   }
-//   const inputButton = document.getElementById("input");
-//   inputButton.addEventListener("click", submitBooking);
